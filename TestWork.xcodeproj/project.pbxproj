@@ -14,6 +14,7 @@
 		22B0E3CB285CFD2D000C2EA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B0E3CA285CFD2D000C2EA9 /* User.swift */; };
 		22B0E3CE285CFE22000C2EA9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B0E3CD285CFE22000C2EA9 /* NetworkManager.swift */; };
 		22B0E3D0285D0399000C2EA9 /* PlacesViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B0E3CF285D0399000C2EA9 /* PlacesViewPresenter.swift */; };
+		22B28B8328608A1E00E74924 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22B28B8228608A1E00E74924 /* GoogleService-Info.plist */; };
 		22C30891285D371000B87579 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 22C30890285D371000B87579 /* SDWebImage */; };
 		22C30893285D371000B87579 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 22C30892285D371000B87579 /* SDWebImageMapKit */; };
 		22C345232859E5B4008EB4AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C345222859E5B4008EB4AB /* AppDelegate.swift */; };
@@ -26,7 +27,6 @@
 		22C34541285A7717008EB4AB /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C34540285A7717008EB4AB /* PlacesViewController.swift */; };
 		22C34544285A7748008EB4AB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C34543285A7748008EB4AB /* MapViewController.swift */; };
 		22C34547285BD393008EB4AB /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C34546285BD393008EB4AB /* CustomCollectionViewCell.swift */; };
-		22C34549285BDDBB008EB4AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22C34548285BDDBB008EB4AB /* GoogleService-Info.plist */; };
 		22C3454E285BDE78008EB4AB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 22C3454D285BDE78008EB4AB /* FirebaseAuth */; };
 		22C5A336285DEF9700CB2880 /* PlacesAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5A335285DEF9700CB2880 /* PlacesAnnotation.swift */; };
 		22C5A338285DEFEF00CB2880 /* MapViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5A337285DEFEF00CB2880 /* MapViewPresenter.swift */; };
@@ -43,6 +43,7 @@
 		22B0E3CA285CFD2D000C2EA9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		22B0E3CD285CFE22000C2EA9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		22B0E3CF285D0399000C2EA9 /* PlacesViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewPresenter.swift; sourceTree = "<group>"; };
+		22B28B8228608A1E00E74924 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "TestWork/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22C3451F2859E5B4008EB4AB /* TestWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C345222859E5B4008EB4AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22C345242859E5B4008EB4AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 		22C34540285A7717008EB4AB /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		22C34543285A7748008EB4AB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		22C34546285BD393008EB4AB /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
-		22C34548285BDDBB008EB4AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22C5A335285DEF9700CB2880 /* PlacesAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesAnnotation.swift; sourceTree = "<group>"; };
 		22C5A337285DEFEF00CB2880 /* MapViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewPresenter.swift; sourceTree = "<group>"; };
 		22C5A33C285E8A8400CB2880 /* MenuPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPlaceViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				22C345212859E5B4008EB4AB /* TestWork */,
+				22B28B8228608A1E00E74924 /* GoogleService-Info.plist */,
 				22C345202859E5B4008EB4AB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -138,7 +139,6 @@
 				22B0E3C3285CAF1F000C2EA9 /* Network */,
 				22C34538285A6B2D008EB4AB /* Modules */,
 				22C345302859E5B5008EB4AB /* Info.plist */,
-				22C34548285BDDBB008EB4AB /* GoogleService-Info.plist */,
 			);
 			path = TestWork;
 			sourceTree = "<group>";
@@ -298,7 +298,7 @@
 			files = (
 				22C3452F2859E5B5008EB4AB /* LaunchScreen.storyboard in Resources */,
 				22C3452C2859E5B5008EB4AB /* Assets.xcassets in Resources */,
-				22C34549285BDDBB008EB4AB /* GoogleService-Info.plist in Resources */,
+				22B28B8328608A1E00E74924 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
