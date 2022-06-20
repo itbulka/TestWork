@@ -8,6 +8,8 @@
 import UIKit
 
 class PlacesViewController: UIViewController {
+    
+    private var presenter: PlacesViewPresenterProtocol!
 
     private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -16,6 +18,7 @@ class PlacesViewController: UIViewController {
         layout.minimumInteritemSpacing = 8
         layout.itemSize = CGSize(width: (UIScreen.main.bounds.width / 4) - 8, height: (UIScreen.main.bounds.width / 4) - 8)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
         return collectionView
     }()
     
@@ -25,14 +28,20 @@ class PlacesViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         title = "Заведения"
         
-        collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
+        presenter = PlacesViewPresenter(self)
+        presenter.getPlaces()
+        
+        view.addSubview(collectionView)
+        collectionView.frame = view.bounds
         
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        view.addSubview(collectionView)
-        
-        collectionView.frame = view.bounds
+    }
+
+
+    func reloadData() {
+        collectionView.reloadData()
     }
 
 }
@@ -40,12 +49,12 @@ class PlacesViewController: UIViewController {
 extension PlacesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return presenter.places.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as? CustomCollectionViewCell else { return UICollectionViewCell() }
-        
+        cell.configure(presenter.places[indexPath.row].image)
         return cell
     }
     

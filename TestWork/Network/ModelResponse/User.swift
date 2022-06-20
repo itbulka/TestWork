@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct User: Codable {
+    let phone: String
+    let identifierId: String
+    
+    enum CodingKeys: String, CodingKey {
+        case phone = "phone"
+        case identifierId = "id"
+    }
+}

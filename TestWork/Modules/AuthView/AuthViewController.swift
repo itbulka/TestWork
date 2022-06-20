@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class AuthViewController: UIViewController {
+    
+    var presenter: AuthViewPresenterProtocol?
+    
+        //MARK: Объекты UI
     
     private var cartView: UIView = {
         var uiview = UIView()
@@ -25,6 +30,7 @@ class AuthViewController: UIViewController {
     private var textFieldForNumber: UITextField = {
         var textField = UITextField()
         textField.borderStyle = .roundedRect
+        textField.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         textField.placeholder = "Номер телефона"
         textField.layer.cornerRadius = 12
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -40,6 +46,10 @@ class AuthViewController: UIViewController {
         button.layer.cornerRadius = 12
         return button
     }()
+    
+    
+        //MARK: Life Cycle View Conrtoller
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +58,20 @@ class AuthViewController: UIViewController {
         cartView.addSubview(textFieldForNumber)
         cartView.addSubview(buttonSendCode)
         
-        buttonSendCode.addTarget(self, action: #selector(tapBtn), for: .allEvents)
+        textFieldForNumber.delegate = self
+        
+        presenter = AuthViewPresenter(self)
+        
+        buttonSendCode.addTarget(self, action: #selector(tapBtn), for: .touchUpInside)
     }
     
     override func viewWillLayoutSubviews() {
         constraintsView()
     }
+    
+    
+        //MARK: Methods for worked
+    
     
     private func constraintsView() {
         NSLayoutConstraint.activate([
@@ -74,9 +92,17 @@ class AuthViewController: UIViewController {
     }
     
     @objc func tapBtn() {
-        self.navigationController?.pushViewController(CodeViewController(), animated: true)
+        presenter?.sendMessageCode(textFieldForNumber.text)
     }
 
 
 }
-
+ 
+extension AuthViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return false }
+        let newString = (text as NSString).replacingCharacters(in: range, with: string)
+        textField.text = presenter?.format(with: "+X (XXX) XXX-XXXX", phone: newString)
+        return false
+    }
+}

@@ -12,7 +12,7 @@ struct Dish: Codable {
     let price: Float
     let name: String
     let weight: Float
-    let idMenu: String
+    let idDish: String
     let desc: String
     
     enum CodingKeys: String, CodingKey {
@@ -20,7 +20,7 @@ struct Dish: Codable {
         case price = "price"
         case name = "name"
         case weight = "weight"
-        case idMenu = "id"
+        case idDish = "id"
         case desc = "desc"
     }
 }
